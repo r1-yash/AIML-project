@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine Quality Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="navbar">
+            <h1 class="navbar-title">WineGrade</h1>
+        </div>
+    </nav>
+
+    <!-- Background Video with Overlay -->
+    <section class="background-video">
+        <video autoplay muted loop class="video">
+            <source src="{{ url_for('static', filename='winevid.mp4') }}" type="video/mp4">
+        </video>
+        <div class="overlay-text">
+            <h1>Predict Wine Quality with AI</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Intro Section -->
+        <section class="intro-section">
+            <p>Welcome to the Wine Quality Prediction system! We use machine learning to predict the quality of wine based on various chemical features.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2>Key Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>Predict Wine Quality</h3>
+                    <p>Our model predicts whether the wine is of good or bad quality based on 11 chemical features.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>11 Chemical Features</h3>
+                    <p>The model considers features like alcohol content, acidity, and sweetness to make an accurate prediction.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Real-time Prediction</h3>
+                    <p>Get an instant prediction by entering the features of any wine and see whether it’s good or bad quality.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prediction Form Section -->
+        <section class="form-section">
+            <h2>Enter Wine Features</h2>
+            <form id="predictionForm">
+                <input type="text" id="features" name="features" placeholder="Enter 11 comma-separated values" required><br>
+                <button type="submit">Get Prediction</button>
+            </form>
+        </section>
+
+        <!-- Result Section -->
+        <section class="result-section">
+            <h3>Prediction: <span id="predictionResult"></span></h3>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 WineGrade. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
